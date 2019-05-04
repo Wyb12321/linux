@@ -74,7 +74,7 @@ static char * number(char * str, int num, int base, int size, int precision
 	int i;
 
 	if (type&SMALL) digits="0123456789abcdefghijklmnopqrstuvwxyz"; //是否使用小写
-	if (type&LEFT) type &= ~ZEROPAD; //如果是左对齐， 进行补零操作
+    if (type&LEFT) type &= ~ZEROPAD; // 如果左对齐，需要把ZEROPAD标志去掉
 	if (base<2 || base>36)           //进制判断
 		return 0;
 	c = (type & ZEROPAD) ? '0' : ' ' ; //如果用0填补，则补零 ， 否则就用空格
